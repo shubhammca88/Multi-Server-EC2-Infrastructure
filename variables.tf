@@ -8,6 +8,12 @@ variable "instance_type" {
   type        = string
 }
 
+variable "fallback_instance_types" {
+  description = "Fallback instance types if primary is unavailable"
+  type        = list(string)
+  default     = ["t3.micro", "t2.nano"]
+}
+
 variable "key_name" {
   description = "Key pair name for SSH"
   type        = string
