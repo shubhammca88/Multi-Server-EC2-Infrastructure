@@ -27,7 +27,6 @@ Terraform configuration for deploying 4 EC2 servers with different environments 
 - `server_ports`: Port configuration per server
 - `instance_types`: Custom instance type for each server
 - `region`: AWS region (default: us-east-1)
-- `fallback_instance_types`: Alternative instance types if capacity issues
 
 ## Prerequisites
 
