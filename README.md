@@ -7,7 +7,8 @@ Terraform configuration for deploying 4 EC2 servers with different environments 
 - **4 EC2 t2.micro** instances (Free Tier eligible)
 - **Individual Security Groups** with dynamic port configuration
 - **Multiple Environments**: dev, staging, prod, test
-- **Default VPC** with public subnets
+- **Default VPC** with automatic AZ selection
+- **Fallback instance types**: t3.micro, t2.nano
 
 ## Server Configuration
 
@@ -24,6 +25,8 @@ Terraform configuration for deploying 4 EC2 servers with different environments 
 - `server_names`: Server names array
 - `environments`: Environment tags for each server
 - `server_ports`: Port configuration per server
+- `region`: AWS region (default: us-east-1)
+- `fallback_instance_types`: Alternative instance types if capacity issues
 
 ## Prerequisites
 
@@ -44,6 +47,13 @@ terraform init
 terraform plan
 terraform apply
 ```
+
+### Troubleshooting Capacity Issues
+
+If you encounter "InsufficientInstanceCapacity" errors:
+1. Change `instance_type = "t3.micro"` in terraform.tfvars
+2. Try different region in terraform.tfvars
+3. Wait and retry later
 
 ## Outputs
 
