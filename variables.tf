@@ -3,15 +3,14 @@ variable "ami_id" {
   type        = string
 }
 
-variable "instance_type" {
-  description = "EC2 instance type"
-  type        = string
+variable "instance_types" {
+  description = "EC2 instance types for each server"
+  type        = list(string)
 }
 
 variable "fallback_instance_types" {
   description = "Fallback instance types if primary is unavailable"
   type        = list(string)
-  default     = ["t3.micro", "t2.nano"]
 }
 
 variable "key_name" {
@@ -28,6 +27,7 @@ variable "public_key_path" {
 variable "region" {
   description = "AWS region"
   type        = string
+  default     = "ap-south-1"
 }
 
 variable "server_count" {

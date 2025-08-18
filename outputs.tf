@@ -10,5 +10,5 @@ output "server_public_ips" {
 
 output "server_details" {
   description = "Server names and IPs"
-  value       = zipmap(var.server_names, [for instance in aws_instance.servers : instance.public_ip != null ? instance.public_ip : instance.private_ip])
+  value       = zipmap(slice(var.server_names, 0, var.server_count), [for instance in aws_instance.servers : instance.public_ip != null ? instance.public_ip : instance.private_ip])
 }
