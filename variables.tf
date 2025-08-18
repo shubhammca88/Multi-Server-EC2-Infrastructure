@@ -8,11 +8,6 @@ variable "instance_types" {
   type        = list(string)
 }
 
-variable "fallback_instance_types" {
-  description = "Fallback instance types if primary is unavailable"
-  type        = list(string)
-}
-
 variable "key_name" {
   description = "Key pair name for SSH"
   type        = string
