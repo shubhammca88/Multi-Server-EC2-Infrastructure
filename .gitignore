@@ -9,8 +9,8 @@
 crash.log
 
 # Exclude override tfvars
-*.tfvars
-*.tfvars.json
+#*.tfvars
+#*.tfvars.json
 
 # Sensitive backup
 terraform.tfstate.backup

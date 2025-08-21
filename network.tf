@@ -1,5 +1,5 @@
 # Key Pair for EC2 login
-resource "aws_key_pair" "webapp_key" {
+resource "aws_key_pair" "server_key" {
   key_name   = var.key_name
   public_key = fileexists(var.public_key_path) ? file(var.public_key_path) : null
 }
