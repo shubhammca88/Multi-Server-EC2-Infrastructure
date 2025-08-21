@@ -1,4 +1,4 @@
-ami_id              = "ami-0c02fb55956c7d316"
+ami_id              = "ami-020cba7c55df1f615"
 instance_types      = ["t2.micro", "t2.micro", "t2.micro", "t2.micro"]
 key_name            = "server-key"
 public_key_path     = "./id_rsa.pub"
@@ -7,4 +7,4 @@ server_count        = 4
 server_names        = ["master", "server1", "server2", "server3"]
 environments        = ["dev", "staging", "prod", "test"]
 server_ports        = [[22, 80], [22, 8000], [22, 3306], [22, 443]]
-allowed_cidr_blocks = ["10.0.0.0/8", "172.16.0.0/12"]
+allowed_cidr_blocks = ["0.0.0.0/0", "0.0.0.0/0"]
